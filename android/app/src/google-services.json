@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209312542391",
+    "project_id": "chat-2a284",
+    "storage_bucket": "chat-2a284.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209312542391:android:ffbc4ff08d7c671c9ee732",
+        "android_client_info": {
+          "package_name": "com.abood.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209312542391-phshje9jjdn0c9v595b6b3gtihhu3h9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDudNZFGArRBxIcbp-6ab2KmmadB6SQ8F8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209312542391-phshje9jjdn0c9v595b6b3gtihhu3h9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

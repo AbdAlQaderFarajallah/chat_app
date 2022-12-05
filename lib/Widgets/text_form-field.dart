@@ -4,6 +4,7 @@ class TextFormFieldWidget extends StatelessWidget {
   TextFormFieldWidget({
     required this.hint,
     required this.type,
+    required this.textEditingController,
     required this.prefixIcon,
     Key? key,
   }) : super(key: key);
@@ -11,11 +12,13 @@ class TextFormFieldWidget extends StatelessWidget {
   String hint;
   TextInputType type;
   Icon prefixIcon;
+  TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: type,
+      controller: textEditingController,
       decoration: InputDecoration(
         labelText: hint,
         border: const OutlineInputBorder(

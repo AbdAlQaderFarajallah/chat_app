@@ -2,8 +2,29 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/text_form-field.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  late TextEditingController _textEmailEditingController;
+  late TextEditingController _textPasswordEditingController;
+  @override
+  void initState() {
+    _textEmailEditingController = TextEditingController();
+    _textPasswordEditingController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _textEmailEditingController.dispose();
+    _textPasswordEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +42,14 @@ class SignupScreen extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             const SizedBox(height: 20),
             TextFormFieldWidget(
-              type: TextInputType.text,
-              hint: 'Name',
-              prefixIcon: const Icon(Icons.person),
-            ),
-            const SizedBox(height: 15),
-            TextFormFieldWidget(
+              textEditingController: _textEmailEditingController,
               type: TextInputType.emailAddress,
               hint: 'Email Address',
               prefixIcon: const Icon(Icons.email),
             ),
             const SizedBox(height: 15),
             TextFormFieldWidget(
+              textEditingController: _textPasswordEditingController,
               type: TextInputType.visiblePassword,
               hint: 'Password',
               prefixIcon: const Icon(Icons.lock),
@@ -48,3 +65,5 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
+
+Future<void> signup() async {}
