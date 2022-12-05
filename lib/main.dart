@@ -1,3 +1,4 @@
+import 'package:chat_app/Screens/home_screen.dart';
 import 'package:chat_app/Screens/launch_screen.dart';
 import 'package:chat_app/Screens/login_screen.dart';
 import 'package:chat_app/Screens/signup_screen.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/launch_screen': (context) => const LaunchScreen(),
         '/login_screen': (context) => const LoginScreen(),
         '/signup_screen': (context) => const SignupScreen(),
+        '/home_screen': (context) => const HomeScreen(),
       },
       initialRoute: '/launch_screen',
     );

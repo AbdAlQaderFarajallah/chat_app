@@ -1,3 +1,4 @@
+import 'package:chat_app/firebase/firebase_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../Widgets/text_form-field.dart';
@@ -56,7 +57,9 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await signup();
+              },
               child: const Text('Signup'),
             ),
           ],
@@ -64,6 +67,14 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
   }
-}
 
-Future<void> signup() async {}
+  Future<void> signup() async {
+    bool sign = await FBController().createAccount(
+        email: _textEmailEditingController.text,
+        password: _textPasswordEditingController.text);
+
+    if (sign) {
+      Navigator.pop(context);
+    }
+  }
+}

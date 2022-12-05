@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:chat_app/firebase/firebase_controller.dart';
 import '../Widgets/text_form-field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -56,7 +56,9 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await login();
+              },
               child: const Text('Login'),
             ),
             Row(
@@ -80,5 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> login() async {
+    bool login = await FBController().login(
+        email: _textEmailEditingController.text,
+        password: _textPasswordEditingController.text);
+
+    if (login) {
+      Navigator.pushReplacementNamed(context, '/home_screen');
+    }
   }
 }
